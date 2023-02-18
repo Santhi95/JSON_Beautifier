@@ -1,0 +1,11 @@
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+}
+html, body, #App, #App>div {
+  height: 100%
+}

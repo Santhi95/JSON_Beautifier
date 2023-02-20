@@ -78,7 +78,7 @@ const JSONBeautifier = (props) => {
                     value={state.stringInput}
                     onChange={(e) => dispatch({ type: "SET_INPUT", string: e.target.value })}
                     inputRef={textRef}
-                    inputProps={{ style: { height: '60vh' } }}
+                    inputProps={{ style: { height: '60vh', overflow:'scroll' } }}
                 />
 
                 <IconButton aria-label="copy" size="small" sx={fabStyle} onClick={() => {

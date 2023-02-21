@@ -12,12 +12,10 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import DrawerMenu from './DrawerMenu';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import MENU from '../constants/Menu';
 import ToolBody from './ToolBody';
-import { Container } from '@mui/material';
-import '../styles/container.css';
+
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -98,7 +96,7 @@ export default function AppDrawerWithBody(props) {
   };
 
   return (<>
-<Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -115,7 +113,7 @@ export default function AppDrawerWithBody(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-          {MENU[state.activeItem].title}
+            {MENU[state.activeItem].title}
           </Typography>
         </Toolbar>
       </AppBar>

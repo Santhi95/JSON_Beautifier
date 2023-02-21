@@ -9,7 +9,6 @@ import FormControl from '@mui/material/FormControl';
 import BButtonGroup from "./BButtonGroup";
 import IconButton from '@mui/material/IconButton';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import CssBaseline from '@mui/material/CssBaseline';
 
 const JSONBeautifier = (props) => {
 
@@ -61,7 +60,7 @@ const JSONBeautifier = (props) => {
                 display: {
                     lg: 'grid'
                 },
-                gridTemplateColumns : '3fr 1fr',
+                gridTemplateColumns: '3fr 1fr',
             }}>
             <FormControl sx={{
                 // marginLeft: '30px',
@@ -79,7 +78,7 @@ const JSONBeautifier = (props) => {
                     value={state.stringInput}
                     onChange={(e) => dispatch({ type: "SET_INPUT", string: e.target.value })}
                     inputRef={textRef}
-                    inputProps={{ style: { height: '60vh', overflow:'scroll' } }}
+                    inputProps={{ style: { height: '60vh', overflow: 'scroll' } }}
                 />
 
                 <IconButton aria-label="copy" size="small" sx={fabStyle} onClick={() => {
@@ -100,9 +99,9 @@ const JSONBeautifier = (props) => {
             <Box sx={{
                 marginTop: 2,
                 marginLeft: '22px',
-                width : '100%',
-                display : 'flex',
-                flexDirection : { lg : 'column'},
+                width: '100%',
+                display: 'flex',
+                flexDirection: { lg: 'column' },
                 flexWrap: 'wrap',
 
             }}>

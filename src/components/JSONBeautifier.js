@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import BButtonGroup from "./BButtonGroup";
 import IconButton from '@mui/material/IconButton';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const JSONBeautifier = (props) => {
 
@@ -53,9 +54,9 @@ const JSONBeautifier = (props) => {
         {state.error && <Alert severity="error">{`Invalid JSON,${state.error}!`}</Alert>}
         <Box
             sx={{
-                margin: 0,
-                paddingLeft: 4,
-                paddingTop: 2,
+                marginTop: 2,
+                // paddingLeft: 4,
+                paddingTop: '64px',
                 width: "100%",
                 display: {
                     lg: 'grid'
@@ -63,7 +64,7 @@ const JSONBeautifier = (props) => {
                 gridTemplateColumns : '3fr 1fr',
             }}>
             <FormControl sx={{
-                marginLeft: '30px',
+                // marginLeft: '30px',
                 minWidth: '150px',
                 maxWidth: '800px',
                 display: 'block',
@@ -99,13 +100,11 @@ const JSONBeautifier = (props) => {
             <Box sx={{
                 marginTop: 2,
                 marginLeft: '22px',
-                minWidth: '150px',
-                maxWidth: '800px',
-                flexGrow: 0,
-                flexShrink: 0,
-                display: {
-                    lg: "block",
-                },
+                width : '100%',
+                display : 'flex',
+                flexDirection : { lg : 'column'},
+                flexWrap: 'wrap',
+
             }}>
                 <BButtonGroup {...props} />
             </Box>

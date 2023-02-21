@@ -3,7 +3,6 @@ import { styled, useTheme } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -11,12 +10,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import DrawerMenu from './DrawerMenu';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import MENU from '../constants/Menu';
 import ToolBody from './ToolBody';
 import { Container } from '@mui/material';
-
+import '../styles/container.css';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -97,7 +98,7 @@ export default function AppDrawerWithBody(props) {
   };
 
   return (<>
-    <Container  >
+<Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -113,28 +114,14 @@ export default function AppDrawerWithBody(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" sx={{ flexGrow: 1 }} component="div">
-            {MENU[state.activeItem].title}
+          <Typography variant="h6" noWrap component="div">
+          {MENU[state.activeItem].title}
           </Typography>
-          <ToggleButtonGroup
-            exclusive
-            value={state.theme}
-            onChange={(e, value) => {
-              console.log("theme", value)
-              dispatch({ type: "TOGGLE_THEME", theme: value })
-            }}
-            aria-label="theme selection"
-          >
-            <ToggleButton value="dark" aria-label="dark">
-              Dark
-            </ToggleButton>
-            <ToggleButton value="light" aria-label="light">
-              Light
-            </ToggleButton>
-          </ToggleButtonGroup>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
+
+      <Drawer variant="permanent"
+        open={open} >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -142,10 +129,11 @@ export default function AppDrawerWithBody(props) {
         </DrawerHeader>
         <Divider />
         <DrawerMenu open={open} dispatch={dispatch} />
+
       </Drawer>
       <DrawerHeader />
       <ToolBody state={state} dispatch={dispatch} open={open} />
-    </Container>
+    </Box>
   </>
   );
 }

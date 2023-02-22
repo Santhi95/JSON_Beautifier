@@ -18,10 +18,12 @@
   }
 }
 
-.center {
+.gitcontainer {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: left;
   flex-direction: column;
+  width: 90vw;
+  height: calc(50vh + 360px)
 }

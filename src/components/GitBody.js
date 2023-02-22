@@ -10,18 +10,18 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import '../styles/App.css'
 const GitBody = (props) => {
 
-    return <div className="center">
+    return <div className="gitcontainer">
         <Box
             sx={{
-                marginLeft: 4,
-                paddingTop: 2,
+                marginRight: 2,
+                // paddingTop: '120px',
+                alignItems: 'center',
                 maxWidth: "600px",
                 display: {
                     lg: 'grid'
                 },
-                gridTemplateColumns: '3fr 1fr',
             }}>
-            <Card sx={{ marginLeft: '30px' }}>
+            <Card >
                 <CardContent>
                     <Typography variant="h6" color="text.secondary" component="div">
                         Want to check out this Project code?

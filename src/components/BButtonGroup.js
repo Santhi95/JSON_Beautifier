@@ -6,6 +6,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import DownloadingIcon from '@mui/icons-material/Downloading';
 import ClearIcon from '@mui/icons-material/Clear';
 import { beautifyString, compressString, downloadResult } from "../utils/utils";
+import Box from '@mui/material/Box';
 const BButtonGroup = (props) => {
     const { state, dispatch } = props
     function validateJSON(str) {
@@ -43,19 +44,19 @@ const BButtonGroup = (props) => {
     }
 
     return <>
-        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "120px", maxWidth: "150px" }} endIcon={<DataObjectOutlinedIcon />}
+        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "150px", maxWidth: "150px" }} endIcon={<DataObjectOutlinedIcon />}
             onClick={() => handleClick('Beautify')}>
             Beautify
         </Button>
-        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "120px", maxWidth: "150px" }} endIcon={<CompressIcon />}
+        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "150px", maxWidth: "150px" }} endIcon={<CompressIcon />}
             onClick={() => handleClick('Compress')}>
             Compress
         </Button>
-        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "120px", maxWidth: "150px" }} endIcon={state.downloading ? <DownloadingIcon /> : <FileDownloadIcon />}
+        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "150px", maxWidth: "150px" }} endIcon={state.downloading ? <DownloadingIcon /> : <FileDownloadIcon />}
             onClick={() => handleClick('Download')}>
             {state.downloading ? 'Downloading' : 'Download'}
         </Button>
-        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "120px", maxWidth: "150px" }} endIcon={<ClearIcon />}
+        <Button variant="contained" sx={{ m: 1, marginBottom: { lg: 2 }, minWidth: "150px", maxWidth: "150px" }} endIcon={<ClearIcon />}
             onClick={() => handleClick('Reset')}>
             Reset
         </Button>

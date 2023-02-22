@@ -95,7 +95,7 @@ const JSONBeautifier = (props) => {
                 <IconButton aria-label="clear" size="small" sx={fabStyleClear} onClick={() => dispatch({ type: "RESET" })} >
                     <ClearIcon />
                 </IconButton>
-            </FormControl>
+            </FormControl>            
             <Box sx={{
                 marginTop: 2,
                 marginLeft: '22px',
@@ -106,7 +106,7 @@ const JSONBeautifier = (props) => {
 
             }}>
                 <BButtonGroup {...props} />
-            </Box>
+        </Box>
         </Box>
     </>
     );
